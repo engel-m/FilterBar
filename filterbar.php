@@ -67,8 +67,8 @@
                         </div>
                     </div>
                     <br>
-                    <div id="success"></div>
-                    <div class="btn-group mt-n2">
+                        <button class="d-block btn btn-danger btn-xl mx-auto" id="applyButton">Apply Filters & Close</button>
+                    <div class="btn-group mt-3">
                         <button class="btn btn-secondary btn-xl" id="resetButton">Clear Filters</button>
                         <button class="btn btn-danger btn-xl" id="showAllButton">Show ALL Episodes</button>
                     </div>

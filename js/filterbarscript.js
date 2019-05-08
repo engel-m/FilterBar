@@ -57,18 +57,18 @@ function getDisplayHTML (eps) {
     $("#rowOne").append(output);     
 }
 
-// Button to open sidebar
-$('#sidebarCollapse').on('click', function () {
+// Functions to open and close sidebar
+
+function openSidebar() {
     $('#sidebar').toggleClass('active').fadeTo(100, 1);
     $('#sidebarCollapse').css('visibility', 'hidden');  
-});
+}
 
-// Button to close sidebar
-$('#crossClose').on('click', function () {
+function closeSidebar() {
     $('#sidebar').toggleClass('active').fadeTo(400, 0);
     $('#sidebarCollapse').css('visibility', 'visible'); 
-    $('#sidebarCollapse').fadeTo(400, 1);   
-});
+    $('#sidebarCollapse').fadeTo(400, 1);  
+}
 
 // Functions to fade and show display
 function fadeDisplay() {
@@ -177,17 +177,30 @@ function resetFilters() {
 
 // ---------------------------------- Event listeners -------------------------------------
 
-$("#showAllButton, #searchButton, #resetButton").on('click', function(e) { 
-    e.preventDefault();
+// Buttons to open and close sidebar
+$('#crossClose').on('click', function () {
+    openSidebar();
+});
+
+$('#sidebarCollapse').on('click', function () {
+    closeSidebar();
+});
+
+$("#showAllButton, #searchButton, #resetButton, #applyButton").on('click', function(e) { 
+    // e.preventDefault();
     switch (e.target.id) {
         case 'searchButton': 
-            fadeDisplay();
-            setTimeout(applyFilters, 200);
+            // fadeDisplay();
+            // setTimeout(applyFilters, 200);   
+            closeSidebar();         
+            break;
+        case 'applyButton':  
+            closeSidebar();         
             break;
         case 'resetButton': 
             resetFilters();
             break;
-        default:     
+        case 'showAllButton':     
             fadeDisplay();        
             setTimeout(showAll, 200);
     }  
