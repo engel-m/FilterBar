@@ -38,13 +38,11 @@ getRandomEps(4);
 // Getting HTML code to display episodes
 function getDisplayHTML (eps) {
     currentEps = eps;
-    console.log(currentEps);
     $("#display").empty();
     $("#display").append("<div class='row' id='rowOne'></div>");
     let output = '';  
     let count = 0;
     eps.forEach( (ep) => {
-        console.log(ep);
         output += `<div class='col-6 col-md-4 col-lg-3 displayBox'>
             <figure class="mx-auto" data-toggle="modal" data-target="#episodeModal" data-key='${count}'>
                 <img class='displayImg figure-img img-fluid' id='img-${ep.id}' src='${ep.image ? ep.image.medium : 'img/filterbar/noimage.jpg'}'/>
@@ -179,22 +177,19 @@ function resetFilters() {
 
 // Buttons to open and close sidebar
 $('#crossClose').on('click', function () {
-    openSidebar();
-});
-
-$('#sidebarCollapse').on('click', function () {
     closeSidebar();
 });
 
+$('#sidebarCollapse').on('click', function () {
+    openSidebar();    
+});
+
 $("#showAllButton, #searchButton, #resetButton, #applyButton").on('click', function(e) { 
-    // e.preventDefault();
+    e.preventDefault();
     switch (e.target.id) {
-        case 'searchButton': 
-            // fadeDisplay();
-            // setTimeout(applyFilters, 200);   
-            closeSidebar();         
-            break;
-        case 'applyButton':  
+        case 'searchButton': case 'applyButton':
+            fadeDisplay();
+            setTimeout(applyFilters, 200);   
             closeSidebar();         
             break;
         case 'resetButton': 

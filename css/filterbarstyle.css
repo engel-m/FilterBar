@@ -1,0 +1,277 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+@font-face {
+    font-family: 'game_of_thronesregular';
+    src: url('./../fonts/game_of_thrones-webfont.woff2') format('woff2'),
+         url('./../fonts/game_of_thrones-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: black;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'game_of_thronesregular', sans-serif;
+}
+
+h5, h6 {
+    font-family: 'Cinzel', sans-serif;
+}
+
+p {
+    font-family: 'Cinzel', sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #999;
+}
+
+/* Disable items inside buttons sending unwanted click events */
+button > * {
+    pointer-events: none;
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+hr {
+    background-color: white;
+}
+
+#sidebarCollapse {
+    top: 2%;
+    left: 2%;
+    max-width: 300px;
+    font-family: 'Cinzel';
+    font-size: 1.3em;    
+    background-color: #a73131;
+    border-color: #a73131;
+}
+
+#sidebarCollapse:focus, #sidebarCollapse:active:focus, #sidebarCollapse.active:focus {
+    background-color: #a73131;
+    border-color: #a73131;
+    outline: none;
+    box-shadow: 0 0 1px 2px rgb(110, 32, 27);
+}
+
+#sidebarCollapse:hover {
+    background-color: #da2f2f;
+}
+
+
+/* Sidebar Styling */
+
+#sidebar {
+    top: 0;
+	height: 100%;
+    min-width: 300px;
+    max-width: 300px;
+    min-height: 100vh;
+    max-height: 80vh;
+    background: rgb(110, 32, 27);
+    color: #fff;
+    transition: all 0.3s;
+    margin-left: -300px; 
+    z-index: 5;   
+}
+
+#sidebar.active {
+    margin-left: 0px;
+    position: -webkit-sticky;
+	position: sticky;
+}
+
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: #5a0f02;
+}
+
+.sidebar-header {
+    position: relative;
+}
+
+#crossClose {
+    position: absolute;  
+    font-size: 2em;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;    
+}
+
+#crossClose:hover {
+    color: #da2f2f;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+    border-bottom: 1px solid white;
+}
+
+#sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+#sidebar ul li a:hover {
+    color: rgb(199, 17, 4);
+    background: #fff;
+}
+
+#sidebar ul li.active > a, a[aria-expanded="true"] {
+    color: #fff;
+    background: #a73131;
+}
+
+/* Filterform */
+
+#searchField {
+    display: inline-block;
+    max-width: 80%;
+}
+
+#searchButton {
+    display: inline-block;
+    max-width: 20%;
+}
+
+#airdate-result {
+    font-size: 0.9em;
+    color: rgb(204, 204, 204);
+}
+
+#resetButton:focus, #resetButton:active:focus, #resetButton.active:focus, #close-modal-button:focus, #close-modal-button:active:focus, #close-modal-button.active:focus,
+#showAllButton:focus, #showAllButton:active:focus, #showAllButton.active:focus {
+    outline: none;
+    box-shadow: 0 0 1px 2px rgb(110, 32, 27);
+}
+
+/* Episode display */
+
+#randomiseHeader {
+    color: rgb(207, 206, 206);
+    font-size: 2em;
+    margin-top: 10%;
+}
+
+#display {
+    width: 80%;
+    padding: 5% 5%;
+    opacity: 0;
+}
+
+.displayBox {
+    box-sizing: border-box;
+    padding: 1.4em 0.5em 0 0.5em;
+    cursor: pointer;
+}
+
+.displayBox:hover {
+    background-color: rgba(238, 237, 237, 0.158);
+}
+
+.displayImg {
+    border: 2px solid transparent;
+}
+
+figure {
+    max-width: 250px;
+}
+
+.captionNumbers {
+    color: rgb(223, 223, 223);
+    font-family: 'Cinzel', sans-serif;
+    font-weight: bold;
+}
+
+.captionTitle {
+    color: rgb(167, 167, 167);
+}
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #a73131;
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+a, a:hover, a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+/* Modal */
+
+.modal-content {
+    background-color: rgb(43, 43, 43);
+    color: white;
+}
+
+.close, .close:focus, .close.active:focus, .close:hover {
+    color: white;
+}
+
+#modal-ep-title {
+    font-family: 'game_of_thronesregular', sans-serif;
+}
+
+.modal-p {
+    color: white;
+    line-height: 1em;
+}
+
+.modal-span {
+    color: rgb(167, 167, 167);
+    font-family: 'verdana', sans-serif;
+    font-size: 0.9em;
+}
+
+#modal-summary {
+    color: rgb(226, 226, 226);
+    font-family: 'verdana', sans-serif;
+    font-size: 1em;
+}
+
+/* Media Query to reverse default sidebar display on mobile screens. */
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -300px;
+        position: fixed;
+        overflow: scroll;      
+    }
+    #sidebar.active {
+        margin-left: 0;
+        position: fixed;
+    }
+    #randomiseHeader {
+        font-size: 1em;
+        margin-top: 25%;
+    }
+    #display {
+        margin-top: 8%;
+    }
+}
